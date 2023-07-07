@@ -1,0 +1,40 @@
+
+<div class="container">
+    <main class="col-md-12">
+        <h1>Employees</h1>
+        <div class="table-responsive small">
+          <table class="table table-striped-columns table-sm" *ngIf="employees && employees.length > 0">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Firstname</th>
+                    <th scope="col">Lastname</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Salary</th>
+                    <th scope="col">Department</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let employee of employees, let i = index">
+                    <td>{{i + 1}}</td>
+                    <td>{{employee.firstname}}</td>
+                    <td>{{employee.lastname}}</td>
+                    <td>{{employee.email}}</td>
+                    <td>{{employee.phone}}</td>
+                    <td>{{employee.salary}}</td>
+                    <td>{{employee.department}}</td>
+                    <td>
+                        <a href="" class="fa fa-edit btn text-success"></a>
+                        <a href="" class="fa fa-trash btn text-danger"></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="col-md-12">
+            <p class="py-5" *ngIf="!employees || employees.length <= 0"> No record to display!</p>
+        </div>
+        </div>
+    </main>
+</div>
