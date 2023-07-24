@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Employees } from 'src/app/models/employees.model';
 import { EmployeesService } from 'src/app/services/employees.service';
+import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-add-employee',
@@ -11,22 +12,13 @@ import { EmployeesService } from 'src/app/services/employees.service';
 })
 export class AddEmployeeComponent implements OnInit {
 
-  // addEmployeeRequest: Employees = {
-  //   id:0,
-  //   firstname: '',
-  //   lastname: '',
-  //   email: '',
-  //   phone: '',
-  //   salary: 0,
-  //   department:''
-  // }
-
   employeeForm!: FormGroup;
 
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private employeeService: EmployeesService
+    private employeeService: EmployeesService,
+    private toast: NgToastService,
      ) {}
 
   ngOnInit(): void {
@@ -52,15 +44,16 @@ export class AddEmployeeComponent implements OnInit {
       this.employeeService.addEmployee(this.employeeForm.value)
       .subscribe({
         next: (res => {
-          alert(res.message)
-
+          //alert(res.message)
+          this.toast.success({detail:"success",summary:res.message,duration:3000});
           this.employeeForm.reset();
           this.router.navigate(['employees'])
         }) 
       });
     }else{
       //throw error
-      alert("Oops! Errors on your form")
+      //alert("Oops! Errors on your form")
+      this.toast.error({detail:"error",summary:'Oops! Something went wrong',duration:3000});
     }
   }
 

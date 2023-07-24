@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NgToastService } from 'ng-angular-popup';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Employees } from 'src/app/models/employees.model';
 import { EmployeesService } from 'src/app/services/employees.service';
@@ -10,8 +10,6 @@ import { EmployeesService } from 'src/app/services/employees.service';
   styleUrls: ['./edit-employee.component.css']
 })
 export class EditEmployeeComponent implements OnInit {
-
-  editEmployeeForm!: FormGroup;
 
   employeeDetails: Employees ={
     id:0,
@@ -24,10 +22,10 @@ export class EditEmployeeComponent implements OnInit {
   }
 
   constructor(
-    private fb: FormBuilder,
     private router: Router,
     private employeeService: EmployeesService,
     private route: ActivatedRoute,
+    private toast: NgToastService,
   ){
 
   }
@@ -51,16 +49,27 @@ export class EditEmployeeComponent implements OnInit {
       }
     })
 
+  }
 
-    //validate form
-    // this.editEmployeeForm = this.fb.group({
-    //   firstname: ['', Validators.required],
-    //   lastname: ['', Validators.required],
-    //   email: ['', Validators.required],
-    //   phone: ['', Validators.required],
-    //   salary: ['', Validators.required],
-    //   department: ['', Validators.required]
-    // })
+  updateEmployee(){
+     this.employeeService.updateEmployee(this.employeeDetails.id, this.employeeDetails)
+     .subscribe({
+      next: (response) =>{
+        this.toast.success({detail:"success",summary:'Record updated successfully',duration:3000});
+        this.router.navigate(['employees'])
+      }
+     })
+  }
+
+
+  deleteEmployee(id: any){
+    this.employeeService.deleteEmployee(id)
+    .subscribe({ 
+      next: (response) =>{
+        this.toast.success({detail:"success",summary:'Record deleted successfully',duration:3000});
+        this.router.navigate(['employees']);
+      }
+    })
   }
 
   

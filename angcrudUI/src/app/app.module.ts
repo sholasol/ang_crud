@@ -8,6 +8,7 @@ import {  HttpClientModule } from '@angular/common/http';
 import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditEmployeeComponent } from './components/edit-employee/edit-employee.component';
+import { NgToastModule } from 'ng-angular-popup';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { EditEmployeeComponent } from './components/edit-employee/edit-employee.
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    NgToastModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
