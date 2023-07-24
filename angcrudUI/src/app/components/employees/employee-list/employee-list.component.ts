@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
 import { Employees } from 'src/app/models/employees.model';
 import { EmployeesService } from 'src/app/services/employees.service';
+import { NgToastService } from 'ng-angular-popup';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee-list',
@@ -44,7 +47,11 @@ export class EmployeeListComponent implements OnInit {
   employees: Employees[] = [];
 
   //inject employees service
-  constructor(private employeesService: EmployeesService) {}
+  constructor(
+      private employeesService: EmployeesService,
+      private toast: NgToastService,
+      private router: Router,
+    ) {}
 
   ngOnInit(): void {
 
@@ -58,6 +65,16 @@ export class EmployeeListComponent implements OnInit {
       }
     })
     //this.employees.push()
+  }
+
+  deleteEmployee(id: any){
+    this.employeesService.deleteEmployee(id)
+    .subscribe({ 
+      next: (response) =>{
+        this.toast.success({detail:"success",summary:'Record deleted successfully',duration:3000});
+        this.router.navigate(['employees']);
+      }
+    })
   }
 
 }

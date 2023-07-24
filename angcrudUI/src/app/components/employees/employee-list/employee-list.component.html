@@ -27,7 +27,7 @@
                     <td>{{employee.department}}</td>
                     <td>
                         <a [routerLink]="['/employee', 'edit', employee.id]" class="fa fa-edit btn text-success"></a>
-                        <a href="" class="fa fa-trash btn text-danger"></a>
+                        <a (click)="deleteEmployee(employee.id)" class="fa fa-trash btn text-danger"></a>
                     </td>
                 </tr>
             </tbody>
