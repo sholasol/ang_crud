@@ -1,4 +1,32 @@
 ﻿<Properties StartupConfiguration="{3CFFBDD8-E7A7-41DB-AA59-A013C7BA1FE3}|https">
+  <Debugger.DebugSourceFolders />
+  <MonoDevelop.Ide.Workbench ActiveDocument="angcrudAPI/Controllers/EmployeesController.cs">
+    <Files>
+      <File FileName="angcrudAPI/Models/Employee.cs" Line="1" Column="1" />
+      <File FileName="angcrudAPI/Data/angcrudDBContext.cs" Line="18" Column="1" />
+      <File FileName="angcrudAPI/Program.cs" Line="42" Column="82" />
+      <File FileName="angcrudAPI/Controllers/EmployeesController.cs" Line="45" Column="18" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="angcrudAPI" expanded="True">
+            <Node name="angcrudAPI">
+              <Node name="Controllers" expanded="True">
+                <Node name="EmployeesController.cs" selected="True" />
+              </Node>
+              <Node name="Data" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.angcrudAPI PreferredExecutionTarget="/Applications/Safari.app" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.angcrudAPI FirstBuild="True" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>

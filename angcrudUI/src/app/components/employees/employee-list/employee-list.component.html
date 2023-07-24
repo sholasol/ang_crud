@@ -11,9 +11,9 @@
                     <th scope="col">Lastname</th>
                     <th scope="col">Email</th>
                     <th scope="col">Phone</th>
-                    <th scope="col">Salary</th>
+                     <th scope="col">Salary</th>
                     <th scope="col">Department</th>
-                    <th scope="col">Action</th>
+                    <th scope="col"> </th>
                 </tr>
             </thead>
             <tbody>
@@ -26,7 +26,7 @@
                     <td>{{employee.salary}}</td>
                     <td>{{employee.department}}</td>
                     <td>
-                        <a href="" class="fa fa-edit btn text-success"></a>
+                        <a [routerLink]="['/employee', 'edit', employee.id]" class="fa fa-edit btn text-success"></a>
                         <a href="" class="fa fa-trash btn text-danger"></a>
                     </td>
                 </tr>

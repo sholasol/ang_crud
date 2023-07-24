@@ -1,0 +1,51 @@
+<div class="container">
+    <main class="col-md-12">
+        <h1>Edit Employee</h1>
+        <div class="row">
+            <div class="offset-md-2 col-md-8 offset-md-2">
+                <form #form="ngForm">
+                    <input type="hidden" class="form-control" id="id" name="id" [(ngModel)]="employeeDetails.id">
+                    <div class="mb-3 row">
+                        <label for="firstname" class="col-sm-2 col-form-label">Id</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="firstname" name="firstname" [(ngModel)]="employeeDetails.firstname">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="lastname" class="col-sm-2 col-form-label">Lastname</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="lastname" name="lastname" [(ngModel)]="employeeDetails.lastname">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="email" class="col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="email" name="email" [(ngModel)]="employeeDetails.email">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="phone" class="col-sm-2 col-form-label">Phone</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="phone" name="phone" [(ngModel)]="employeeDetails.phone">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="salary" class="col-sm-2 col-form-label">Salary</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="salary" name="salary" [(ngModel)]="employeeDetails.salary">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="department" class="col-sm-2 col-form-label">Department</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="department" name="department" [(ngModel)]="employeeDetails.department">
+                        </div>
+                    </div>
+                    <div class="float-end">
+                        <button  type="submit" class="btn btn-success">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
